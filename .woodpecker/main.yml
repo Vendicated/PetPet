@@ -1,0 +1,39 @@
+pipeline:
+  build:
+    image: registry.catvibers.me/ittai/builder
+    commands:
+      - pnpm i
+      - ittai --plugin="./" --betterdiscord --powercordv2 --goosemod --production --output=./dist
+    when:
+      event: [ push ]
+
+  setup:
+    image: alpine/git
+    # TODO remove /tmp hack
+    commands:
+      - cp ./README* ./dist || true
+      - cp ./LICENSE* ./dist || true
+      - mv ./dist /tmp/dist
+      - find . -path './*' -prune -exec rm -rf -- {} +
+      - mv /tmp/dist/* .
+      - git init
+    when:
+      event: [ push ]
+
+  push:
+    image: appleboy/drone-git-push
+    secrets: [git_ssh_key]
+    settings:
+      branch: build-gitea
+      remote: git@git.catvibers.me:ittai/example-plugin.git
+      force: true
+      commit: true
+      commit_message: Build plugin
+      author_name: ittaibot
+      author_email: ittai@catvibers.me
+      ssh_key:
+        from_secret: git_ssh_key
+    when:
+      event: [ push ]
+
+branches: main

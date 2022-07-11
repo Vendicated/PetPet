@@ -1,0 +1,19 @@
+{
+  "name": "ittai-example",
+  "version": "1.0.0",
+  "description": "Example for an Ittai plugin with CI building using GitHub Actions or Woodpecker",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@git.catvibers.me:Ittai/example-plugin.git"
+  },
+  "author": "",
+  "license": "CC0-1.0",
+  "dependencies": {
+    "@types/react": "^18.0.6",
+    "ittai": "^1.0.3"
+  }
+}

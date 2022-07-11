@@ -1,0 +1,12 @@
+{
+    "manifest": {
+        "name": "Example Plugin",
+        "version": "1.0.0",
+        "license": "MIT",
+        "source": "https://bruh/moment",
+        "updateUrl": "https://bruh/moment",
+        "main": "index.js",
+        "author": "AA",
+        "description": "bruh"
+    }
+}

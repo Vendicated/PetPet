@@ -77,7 +77,7 @@ export default class PetPet extends Plugin {
                         return reportError(context, "whaaa how??")
                 }
 
-                const av = await this.loadImage(url, false).catch(() => void 0);
+                const av = await this.loadImage(url).catch(() => void 0);
                 if (!av) return reportError(context, "Failed to fetch that image D:")
 
                 try {
@@ -98,23 +98,14 @@ export default class PetPet extends Plugin {
         unregisterCommand(cmdId)
     }
 
-    loadImage(src: string, local: boolean) {
+    loadImage(src: string) {
         return new Promise<CanvasImageSource>(async (resolve, reject) => {
             const img = new Image();
             img.onload = () => {
-                if (local) URL.revokeObjectURL(src);
                 resolve(img);
             };
             img.onerror = reject;
-            if (local) {
-                try {
-                    const buf = await readFile(src);
-                    const blob = new Blob([buf], { type: "image/gif" });
-                    src = URL.createObjectURL(blob);
-                } catch (err) {
-                    reject(err);
-                }
-            } else img.crossOrigin = "Anonymous";
+            img.crossOrigin = "Anonymous";
             img.src = src;
         });
     }
@@ -126,7 +117,7 @@ export default class PetPet extends Plugin {
                 Array(10)
                     .fill(null)
                     .map((_, i) => {
-                        return this.loadImage(`https://github.com/Vendicated/PetPet/raw/main/frames/${i}.gif`, false);
+                        return this.loadImage(`https://raw.githubusercontent.com/Vendicated/PetPet/main/frames/pet${i}.gif`);
                     })
             );
 

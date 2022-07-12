@@ -2,8 +2,6 @@ import { findByProps } from "ittai/webpack"
 import { ChannelObject } from "ittai";
 import { botMessage, CommandTypes, registerCommand, unregisterCommand } from "ittai/commands";
 import { Plugin } from "ittai/entities";
-import { join } from "path";
-import { readFile } from "fs/promises";
 import GifEncoder from "./gifencoder";
 
 function reportError(context: { channel: ChannelObject }, content: string) {

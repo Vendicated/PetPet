@@ -10,7 +10,7 @@
   "author": "Vendicated",
   "license": "Apache-2.0",
   "dependencies": {
-    "ittai": "^1.0.5"
+    "ittai": "^1.0.7"
   },
   "devDependencies": {
     "@ittai/builder": "^1.2.6",

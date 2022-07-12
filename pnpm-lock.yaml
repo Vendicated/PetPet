@@ -4,10 +4,10 @@ specifiers:
   '@ittai/builder': ^1.2.6
   '@types/node': ^18.0.3
   '@types/react': ^18.0.15
-  ittai: ^1.0.5
+  ittai: ^1.0.7
 
 dependencies:
-  ittai: 1.0.5
+  ittai: 1.0.7
 
 devDependencies:
   '@ittai/builder': 1.2.6
@@ -1313,8 +1313,8 @@ packages:
     resolution: {integrity: sha512-sNxgpk9793nzSs7bA6JQJGeIuRBQhAaNGG77kzYQgMkrID+lS6SlK07K5LaptscDlSaIgH+GPFzf+d75FVxozA==}
     dev: true
 
-  /ittai/1.0.5:
-    resolution: {integrity: sha512-Zrx4+3ZKtUHohhP1n0rhriXEq8D6tuJWV0NshBv6kECwj0d7rg3ZjW983pp01f0jEVrhU9gj9l35qmVoxAzCYg==}
+  /ittai/1.0.7:
+    resolution: {integrity: sha512-FuWdNB4BFrsTie1Fg1LdG97MCjDpqmlwhuEr4StxukuxjNVR64pkkpEi6QEOgnr2nrvugw5f0E97znfaFbdmQA==}
     dependencies:
       '@react-spring/types': 9.4.4
       '@types/react': 17.0.44

@@ -1,6 +1,6 @@
 import { findByProps } from "ittai/webpack"
 import { ChannelObject } from "ittai";
-import { botMessage, CommandTypes, registerCommand } from "ittai/commands";
+import { botMessage, CommandTypes, registerCommand, unregisterCommand } from "ittai/commands";
 import { Plugin } from "ittai/entities";
 import { join } from "path";
 import { readFile } from "fs/promises";
@@ -17,10 +17,13 @@ const defaults = {
     delay: 20
 };
 let frames: CanvasImageSource[]
-
+let cmdId = -1
 export default class PetPet extends Plugin {
     start() {
-        registerCommand({
+        console.log("hi")
+        cmdId = registerCommand({
+            inputType: 0,
+            type: 1,
             name: "petpet",
             description: "Make a pet gif",
             options: [
@@ -92,7 +95,7 @@ export default class PetPet extends Plugin {
     }
 
     stop() {
-        console.log("bye");
+        unregisterCommand(cmdId)
     }
 
     loadImage(src: string, local: boolean) {
@@ -123,8 +126,7 @@ export default class PetPet extends Plugin {
                 Array(10)
                     .fill(null)
                     .map((_, i) => {
-                        const filename = join(__dirname, "frames", `pet${i}.gif`);
-                        return this.loadImage(filename, true);
+                        return this.loadImage(`https://github.com/Vendicated/PetPet/raw/main/frames/${i}.gif`, false);
                     })
             );
 

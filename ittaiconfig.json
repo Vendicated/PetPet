@@ -1,12 +1,12 @@
 {
     "manifest": {
-        "name": "Example Plugin",
+        "name": "PetPet",
         "version": "1.0.0",
-        "license": "MIT",
-        "source": "https://bruh/moment",
+        "license": "Apache-2.0",
+        "source": "https://github.com/Vendicated/PetPet/tree/main",
         "updateUrl": "https://bruh/moment",
         "main": "index.js",
-        "author": "AA",
-        "description": "bruh"
+        "author": "Vendicated",
+        "description": "Pet your friends! ~ A pet gif maker"
     }
 }

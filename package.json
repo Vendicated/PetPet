@@ -1,19 +1,20 @@
 {
-  "name": "ittai-example",
+  "name": "petpetp",
   "version": "1.0.0",
-  "description": "Example for an Ittai plugin with CI building using GitHub Actions or Woodpecker",
+  "description": "PetPet plugin for Discord",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "ittai --plugin=./ --betterdiscord=/home/ven/.config/BetterDiscord/plugins --powercordv2 --production"
   },
-  "repository": {
-    "type": "git",
-    "url": "git@git.catvibers.me:Ittai/example-plugin.git"
-  },
-  "author": "",
-  "license": "CC0-1.0",
+  "author": "Vendicated",
+  "license": "Apache-2.0",
   "dependencies": {
-    "@types/react": "^18.0.6",
-    "ittai": "^1.0.3"
+    "ittai": "^1.0.5"
+  },
+  "devDependencies": {
+    "@ittai/builder": "^1.2.6",
+    "@types/node": "^18.0.3",
+    "@types/react": "^18.0.15"
   }
 }

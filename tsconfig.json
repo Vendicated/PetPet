@@ -3,7 +3,7 @@
         "module": "ES6",
         "target": "ES6",
         "allowJs": true,
-        "checkJs": true,
+        "checkJs": false,
         "jsx": "react",
         "rootDir": "./",
         "removeComments": false,
